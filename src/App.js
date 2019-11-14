@@ -1,19 +1,24 @@
 import React from 'react';
 // import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
+import store from './redux/store';
 
 import Header from './components/header';
-import ToDo from './components/toDo';
+import ToDoContainer from './components/toDoContainer';
 import Search from './components/search';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Route exact path="/" component={ToDo} />
-        <Route exact path="/search" component={Search} />
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Header />
+          <Route exact path="/" component={ToDoContainer} />
+          <Route exact path="/search" component={Search} />
+        </Router>
+      </Provider>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import Appbar from '@material-ui/core/AppBar';
 export default function Header() {
     return (
         <div>
-            <Typography variant="h2" gutterBottom="true">To Do React App</Typography>
+            <Typography variant="h2" gutterBottom={true}>To Do React App</Typography>
             <Appbar position="static">
                 <Typography variant="h6">
                     <Link to="/">To Do</Link>
